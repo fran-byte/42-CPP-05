@@ -54,7 +54,7 @@ int main(void)
         try
         {
             Bureaucrat b(name, grade);
-            bureaucrats.push_back(b); // ✅ C++98 compatible
+            bureaucrats.push_back(b);
         }
         catch (std::exception &e)
         {
