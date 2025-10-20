@@ -53,7 +53,8 @@ int main(void)
 
         try
         {
-            bureaucrats.emplace_back(name, grade);
+            Bureaucrat b(name, grade);
+            bureaucrats.push_back(b); // ✅ C++98 compatible
         }
         catch (std::exception &e)
         {
@@ -134,6 +135,7 @@ int main(void)
             }
             break;
         }
+
         case 3: // Increment Grade
         {
             int index;
@@ -157,6 +159,7 @@ int main(void)
             }
             break;
         }
+
         case 4: // Decrement Grade
         {
             int index;
