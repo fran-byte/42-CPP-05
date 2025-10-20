@@ -102,9 +102,7 @@ int main(void)
                 }
             }
             else
-            {
                 std::cout << "Invalid index.\n";
-            }
             break;
         }
 
@@ -130,9 +128,7 @@ int main(void)
                           << " to " << bureaucrats[to].getName() << std::endl;
             }
             else
-            {
                 std::cout << "Invalid indices.\n";
-            }
             break;
         }
 
@@ -154,9 +150,7 @@ int main(void)
                 }
             }
             else
-            {
                 std::cout << "Invalid index.\n";
-            }
             break;
         }
 
@@ -178,9 +172,7 @@ int main(void)
                 }
             }
             else
-            {
                 std::cout << "Invalid index.\n";
-            }
             break;
         }
 
