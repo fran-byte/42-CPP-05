@@ -28,7 +28,7 @@ int main(void)
     int count;
 
     std::cout << "Number of Bureaucrats? ";
-    while (!(std::cin >> count) || count <= 0)
+    while (!(std::cin >> count))
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
