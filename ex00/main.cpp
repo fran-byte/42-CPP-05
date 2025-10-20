@@ -5,20 +5,20 @@
 
 void menu()
 {
-    std::cout << "\nMenu:\n";
-    std::cout << "1 - Create Bureaucrat by copy (new a)\n";
-    std::cout << "2 - Assign Bureaucrat (a = b)\n";
-    std::cout << "3 - Increment Grade (++)\n";
-    std::cout << "4 - Decrement Grade (--)\n";
-    std::cout << "0 - Exit\n";
+    std::cout << "\nMenu:" << std::endl;
+    std::cout << "1 - Create Bureaucrat by copy (new a)" << std::endl;
+    std::cout << "2 - Assign Bureaucrat (a = b)" << std::endl;
+    std::cout << "3 - Increment Grade (++)" << std::endl;
+    std::cout << "4 - Decrement Grade (--)" << std::endl;
+    std::cout << "0 - Exit" << std::endl;
 }
 
 void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
 {
-    std::cout << "\nCurrent Bureaucrats:\n";
+    std::cout << "\nCurrent Bureaucrats: " << std::endl;
     for (size_t i = 0; i < bureaucrats.size(); ++i)
     {
-        std::cout << "[" << i << "] " << bureaucrats[i] << "\n";
+        std::cout << "[" << i << "] " << bureaucrats[i] << std::endl;
     }
 }
 
@@ -102,7 +102,7 @@ int main(void)
                 }
             }
             else
-                std::cout << "Invalid index.\n";
+                std::cout << "Invalid index" << std::endl;
             break;
         }
 
@@ -110,7 +110,7 @@ int main(void)
         {
             if (bureaucrats.size() < 2)
             {
-                std::cout << "Assignment requires at least 2 Bureaucrats.\n";
+                std::cout << "Assignment requires at least 2 Bureaucrats." << std::endl;
                 break;
             }
 
@@ -128,7 +128,7 @@ int main(void)
                           << " to " << bureaucrats[to].getName() << std::endl;
             }
             else
-                std::cout << "Invalid indices.\n";
+                std::cout << "Invalid indices." << std::endl;
             break;
         }
 
@@ -150,7 +150,7 @@ int main(void)
                 }
             }
             else
-                std::cout << "Invalid index.\n";
+                std::cout << "Invalid index." << std::endl;
             break;
         }
 
@@ -172,15 +172,15 @@ int main(void)
                 }
             }
             else
-                std::cout << "Invalid index.\n";
+                std::cout << "Invalid index." << std::endl;
             break;
         }
 
         case 0:
-            std::cout << "Exiting...\n";
+            std::cout << "Exiting..." << std::endl;
             break;
         default:
-            std::cout << "Invalid option.\n";
+            std::cout << "Invalid option." << std::endl;
         }
 
     } while (option != 0);
