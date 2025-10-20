@@ -8,8 +8,8 @@ void menu()
     std::cout << "\nMenu:\n";
     std::cout << "1 - Create Bureaucrat by copy (new a)\n";
     std::cout << "2 - Assign Bureaucrat (a = b)\n";
-    std::cout << "3 - Increment Grade (++a)\n";
-    std::cout << "4 - Decrement Grade (--a)\n";
+    std::cout << "3 - Increment Grade (++)\n";
+    std::cout << "4 - Decrement Grade (--)\n";
     std::cout << "0 - Exit\n";
 }
 
