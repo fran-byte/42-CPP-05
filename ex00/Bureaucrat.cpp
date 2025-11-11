@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:02:27 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/11 20:27:56 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:32:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy.
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    if (this != &copy)
-        _grade = copy._grade;
+    if (this != &other)
+        _grade = other._grade;
     return *this;
 }
 

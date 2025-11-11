@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:01:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/11 20:27:34 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:31:45 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
     Bureaucrat(const Bureaucrat &copy);
     ~Bureaucrat();
 
-    Bureaucrat &operator=(const Bureaucrat &copy);
+    Bureaucrat &operator=(const Bureaucrat &other);
 
     const std::string &getName() const;
     int getGrade() const;
