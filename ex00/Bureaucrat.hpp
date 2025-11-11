@@ -9,11 +9,11 @@ class Bureaucrat
 {
 private:
     const std::string _name;
-    unsigned int _grade;
+    int _grade;
 
 public:
     Bureaucrat();
-    Bureaucrat(const std::string name, const unsigned int grade);
+    Bureaucrat(const std::string name, int grade);
     Bureaucrat(const Bureaucrat &copy);
     ~Bureaucrat();
 
@@ -21,7 +21,7 @@ public:
 
     const std::string &getName() const;
     unsigned int getGrade() const;
-    void setGrade(unsigned int grade);
+    void setGrade(int grade);
     void incrementGrade();
     void decrementGrade();
 

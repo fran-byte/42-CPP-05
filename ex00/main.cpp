@@ -15,10 +15,10 @@ void menu()
 
 void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
 {
-    std::cout << "\nCurrent Bureaucrats: " << std::endl;
+    std::cout << "\033[1;32m\nCurrent Bureaucrats: \033[0m" << std::endl;
     for (size_t i = 0; i < bureaucrats.size(); ++i)
     {
-        std::cout << "[" << i << "] " << bureaucrats[i] << std::endl;
+        std::cout << "\033[32m[ID: " << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
     }
 }
 
@@ -28,7 +28,7 @@ int main(void)
     int count;
 
     std::cout << "Number of Bureaucrats? ";
-    while (!(std::cin >> count))
+    while (!(std::cin >> count) || count <= 0)
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -58,7 +58,7 @@ int main(void)
         }
         catch (std::exception &e)
         {
-            std::cerr << "Error: " << e.what() << std::endl;
+            std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
             --i;
         }
     }
@@ -98,7 +98,7 @@ int main(void)
                 }
                 catch (std::exception &e)
                 {
-                    std::cerr << "Error: " << e.what() << std::endl;
+                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
                 }
             }
             else
@@ -146,7 +146,7 @@ int main(void)
                 }
                 catch (std::exception &e)
                 {
-                    std::cerr << "Error: " << e.what() << std::endl;
+                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
                 }
             }
             else
@@ -168,7 +168,7 @@ int main(void)
                 }
                 catch (std::exception &e)
                 {
-                    std::cerr << "Error: " << e.what() << std::endl;
+                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
                 }
             }
             else
