@@ -30,7 +30,7 @@ int main(void)
     std::cout << "Number of Bureaucrats? ";
     while (!(std::cin >> count) || count <= 0)
     {
-        std::cin.clear();
+        std::cin.clear(); /*reset (error)status cin*/
         /*ignore all characters from the input buffer until a newline (\n)*/
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Please enter a valid positive number: ";
