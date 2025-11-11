@@ -17,9 +17,7 @@ void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
 {
     std::cout << "\033[1;32m\nCurrent Bureaucrats: \033[0m" << std::endl;
     for (size_t i = 0; i < bureaucrats.size(); ++i)
-    {
         std::cout << "\033[32m[ID: " << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
-    }
 }
 
 int main(void)
@@ -35,7 +33,6 @@ int main(void)
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Please enter a valid positive number: ";
     }
-
     for (int i = 0; i < count; ++i)
     {
         std::string name;
@@ -43,7 +40,6 @@ int main(void)
 
         std::cout << "Name #" << i + 1 << ": ";
         std::cin >> name;
-
         std::cout << "Grade (1-150): ";
         while (!(std::cin >> grade))
         {
@@ -51,7 +47,6 @@ int main(void)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Invalid input. Please enter a number: ";
         }
-
         try
         {
             Bureaucrat b(name, grade);
@@ -76,10 +71,9 @@ int main(void)
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Invalid input. Choose a number: ";
         }
-
         switch (option)
         {
-        case 1: // Copy with new name
+        case 1: /*Copy with new name*/
         {
             int index;
             std::cout << "Enter index of Bureaucrat to copy (0 to " << bureaucrats.size() - 1 << "): ";
@@ -106,8 +100,7 @@ int main(void)
                 std::cout << "Invalid index" << std::endl;
             break;
         }
-
-        case 2: // Assignment
+        case 2: /*Assignment*/
         {
             if (bureaucrats.size() < 2)
             {
@@ -132,8 +125,7 @@ int main(void)
                 std::cout << "Invalid indices." << std::endl;
             break;
         }
-
-        case 3: // Increment Grade
+        case 3: /* ++ Grade */
         {
             int index;
             std::cout << "Enter index to increment grade: ";
@@ -154,8 +146,7 @@ int main(void)
                 std::cout << "Invalid index." << std::endl;
             break;
         }
-
-        case 4: // Decrement Grade
+        case 4: /* -- Grade */
         {
             int index;
             std::cout << "Enter index to decrement grade: ";
@@ -176,15 +167,12 @@ int main(void)
                 std::cout << "Invalid index." << std::endl;
             break;
         }
-
         case 0:
             std::cout << "Exiting..." << std::endl;
             break;
         default:
             std::cout << "Invalid option." << std::endl;
         }
-
     } while (option != 0);
-
     return 0;
 }
