@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:02:27 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/11 20:02:54 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:18:21 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ const std::string &Bureaucrat::getName() const
     return (_name);
 }
 
-unsigned int Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
     return (_grade);
 }
