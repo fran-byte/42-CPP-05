@@ -49,6 +49,7 @@ int main(void)
         }
         try
         {
+            /*Create Obj*/
             Bureaucrat b(name, grade);
             bureaucrats.push_back(b);
         }
