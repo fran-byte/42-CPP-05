@@ -1,6 +1,6 @@
 
 NAME = Bureaucrat
-CC = c++
+CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDES = -I .
 
@@ -12,14 +12,11 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
+	@$(CXX) $(CFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
 	@echo "$(NAME) created."
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-valgrind: all
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+	@$(CXX) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
