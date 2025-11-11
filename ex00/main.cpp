@@ -17,7 +17,7 @@ void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
 {
     std::cout << "\033[1;32m\nCurrent Bureaucrats: \033[0m" << std::endl;
     for (size_t i = 0; i < bureaucrats.size(); ++i)
-        std::cout << "\033[32m[ID: " << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
+        std::cout << "\033[32m[#" << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
 }
 
 int main(void)
@@ -168,7 +168,7 @@ int main(void)
             break;
         }
         case 0:
-            std::cout << "Exiting..." << std::endl;
+            std::cout << "Bye, Bye..." << std::endl;
             break;
         default:
             std::cout << "Invalid option." << std::endl;
