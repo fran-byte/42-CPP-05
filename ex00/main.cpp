@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/11 20:03:49 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/12 20:15:50 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,16 @@ int main(void)
     for (int i = 0; i < count; ++i)
     {
         std::string name;
+        std::string option;
         int grade;
+        std::cout << "Use default name? (y/n): ";
+        std::cin >> option;
+        if (option == "y" || option == "Y")
+        {
+            Bureaucrat b;
+            bureaucrats.push_back(b);
+            continue;
+        }
 
         std::cout << "Name #" << i + 1 << ": ";
         std::cin >> name;
