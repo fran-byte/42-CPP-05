@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:31:17 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/12 19:24:06 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 09:26:41 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 
 public:
     Form();
-    Form(const std::string &name, int const gradeToSign, int const gradeToExec);
+    Form(const std::string &name, int gradeToSign, int gradeToExec);
     Form(const Form &copy);
     ~Form();
     Form &operator=(const Form &other);
