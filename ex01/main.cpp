@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 13:31:24 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:01:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,7 @@ int main(void)
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "Please enter a valid positive number: ";
             }
+            std::cout << std::endl;
             try
             {
                 forms[idForm].beSigned(bureaucrats[idBuro]);
