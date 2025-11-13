@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:31:17 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 09:26:41 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 10:28:53 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     ~Form();
     Form &operator=(const Form &other);
     std::string getName() const;
-    bool getSign() const;
+    bool getIsSign() const;
     int getGradeToSign() const;
     int getGradeToExec() const;
     void beSigned(Bureaucrat &b);
