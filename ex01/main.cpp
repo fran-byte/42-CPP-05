@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 10:41:19 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:40:28 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,37 @@ int main(void)
         }
     }
 
+    std::cout << "Number of Forms to create? ";
+    while (!(std::cin >> count) || count <= 0)
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Please enter a valid positive number: ";
+    }
+
+    for (int i = 0; i < count; ++i)
+    {
+        std::string name;
+        int gradeToSign, gradeToExec;
+
+        std::cout << "Form name #" << i + 1 << ": ";
+        std::cin >> name;
+        std::cout << "Grade required to sign (1-150): ";
+        std::cin >> gradeToSign;
+        std::cout << "Grade required to execute (1-150): ";
+        std::cin >> gradeToExec;
+
+        try
+        {
+            Form f(name, gradeToSign, gradeToExec);
+            forms.push_back(f);
+        }
+        catch (std::exception &e)
+        {
+            std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
+            --i; // repetir este formulario
+        }
+    }
     int option;
     do
     {
