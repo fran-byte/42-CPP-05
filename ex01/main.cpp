@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 11:40:28 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:15:50 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void menu()
     std::cout << "2 - Assign Bureaucrat (a = b)" << std::endl;
     std::cout << "3 - Increment Grade (++)" << std::endl;
     std::cout << "4 - Decrement Grade (--)" << std::endl;
-    std::cout << "5 - Create Form" << std::endl;
-    std::cout << "6 - Sign Form" << std::endl;
-    std::cout << "7 - Show Forms" << std::endl;
+    std::cout << "5 - Sign Form" << std::endl;
+    std::cout << "6 - Show Forms" << std::endl;
     std::cout << "0 - Exit" << std::endl;
 }
 
@@ -250,7 +249,7 @@ int main(void)
             }
             break;
         }
-        case 7:
+        case 6:
         {
             std::cout << "\033[1;34m\nCurrent Forms: \033[0m" << std::endl;
             for (size_t i = 0; i < forms.size(); ++i)
