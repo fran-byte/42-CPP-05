@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:32:33 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 11:08:49 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:59:58 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ Form &Form::operator=(const Form &other)
     return (*this);
 }
 
+std::string Form::getName() const
+{
+    return _name;
+}
 bool Form::getIsSign() const
 {
     return _isSigned;
@@ -50,6 +54,16 @@ int Form::getGradeToSign() const
 int Form::getGradeToExec() const
 {
     return _gradeToExec;
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+    return "Grade too high";
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+    return "Grade too low";
 }
 
 void Form::beSigned(Bureaucrat &b)
