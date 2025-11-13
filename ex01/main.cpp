@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 20:19:48 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:12:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void test1()
 {
-    std::cout << "=== TEST 1: Invalid Bureaucrats and Forms ===" << std::endl;
+    std::cout << "*** TEST 1: Invalid Bureaucrats and Forms" << std::endl;
 
     try
     {
@@ -58,7 +58,7 @@ void test1()
 
 void test2()
 {
-    std::cout << "=== TEST 2: Form cannot be signed by low-grade bureaucrat ===" << std::endl;
+    std::cout << "*** TEST 2: Form cannot be signed by low-grade bureaucrat" << std::endl;
 
     try
     {
@@ -80,7 +80,7 @@ void test2()
 
 void test3()
 {
-    std::cout << "=== TEST 3: Form can be signed by high-grade bureaucrat ===" << std::endl;
+    std::cout << "*** TEST 3: Form can be signed by high-grade bureaucrat" << std::endl;
 
     try
     {
