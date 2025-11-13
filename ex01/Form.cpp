@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:32:33 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 11:59:58 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:45:46 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ const char *Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(Bureaucrat &b)
 {
-    if (b.getGrade() >= _gradeToSign)
+    if (b.getGrade() <= _gradeToSign)
     {
         _isSigned = true;
         std::cout << b << " signed the form!!" << std::endl;
     }
     else
-        std::cout << b << "is not allowed to sign this form!!" << std::endl;
+        std::cout << b << " \033[1;31mis not allowed to sign this form!!\033[0m" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &obj)
