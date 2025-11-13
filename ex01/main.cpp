@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 12:28:07 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:31:24 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void menu()
     std::cout << "3 - Increment Grade (++)" << std::endl;
     std::cout << "4 - Decrement Grade (--)" << std::endl;
     std::cout << "5 - Sign Form" << std::endl;
-    std::cout << "6 - Show Forms" << std::endl;
     std::cout << "0 - Exit" << std::endl;
 }
 
@@ -36,9 +35,9 @@ void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
 }
 void showForms(const std::vector<Form> &forms)
 {
-    std::cout << "\033[1;32m\nCurrent Forms: \033[0m" << std::endl;
+    std::cout << "\033[1;34m\nCurrent Forms: \033[0m" << std::endl;
     for (size_t i = 0; i < forms.size(); ++i)
-        std::cout << "\033[32m[#" << i << "] " << forms[i] << "\033[0m" << std::endl;
+        std::cout << "\033[34m[#" << i << "] " << forms[i] << "\033[0m" << std::endl;
 }
 
 int main(void)
@@ -235,33 +234,32 @@ int main(void)
         }
         case 5:
         {
-            std::string name;
-            int gradeToSign, gradeToExec;
-
-            std::cout << "Form name: ";
-            std::cin >> name;
-            std::cout << "Grade required to sign (1-150): ";
-            std::cin >> gradeToSign;
-            std::cout << "Grade required to execute (1-150): ";
-            std::cin >> gradeToExec;
-
+            int idForm;
+            int idBuro;
+            std::cout << "Enter # Form to sign : ";
+            while (!(std::cin >> idForm) || idForm < 0)
+            {
+                std::cin.clear(); /*reset (error)status cin*/
+                /*ignore all characters from the input buffer until a newline (\n)*/
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Please enter a valid positive number: ";
+            }
+            std::cout << "Enter # Bureaucrat to sign : ";
+            while (!(std::cin >> idBuro) || idBuro < 0)
+            {
+                std::cin.clear(); /*reset (error)status cin*/
+                /*ignore all characters from the input buffer until a newline (\n)*/
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Please enter a valid positive number: ";
+            }
             try
             {
-                Form f(name, gradeToSign, gradeToExec);
-                forms.push_back(f);
-                std::cout << "Form created: " << f << std::endl;
+                forms[idForm].beSigned(bureaucrats[idBuro]);
             }
             catch (std::exception &e)
             {
                 std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
             }
-            break;
-        }
-        case 6:
-        {
-            std::cout << "\033[1;34m\nCurrent Forms: \033[0m" << std::endl;
-            for (size_t i = 0; i < forms.size(); ++i)
-                std::cout << "\033[34m[#" << i << "] " << forms[i] << "\033[0m" << std::endl;
             break;
         }
 
