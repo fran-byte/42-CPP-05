@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 12:15:50 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:28:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
     std::cout << "\033[1;32m\nCurrent Bureaucrats: \033[0m" << std::endl;
     for (size_t i = 0; i < bureaucrats.size(); ++i)
         std::cout << "\033[32m[#" << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
+}
+void showForms(const std::vector<Form> &forms)
+{
+    std::cout << "\033[1;32m\nCurrent Forms: \033[0m" << std::endl;
+    for (size_t i = 0; i < forms.size(); ++i)
+        std::cout << "\033[32m[#" << i << "] " << forms[i] << "\033[0m" << std::endl;
 }
 
 int main(void)
@@ -121,6 +127,8 @@ int main(void)
     do
     {
         showBureaucrats(bureaucrats);
+        showForms(forms);
+
         menu();
         std::cout << "Choose an option: ";
         while (!(std::cin >> option))
