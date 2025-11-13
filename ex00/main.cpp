@@ -6,195 +6,143 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/12 20:15:50 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:07:55 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <vector>
 #include <iostream>
-#include <limits>
 
-void menu()
+void test1()
 {
-    std::cout << "\nMenu:" << std::endl;
-    std::cout << "1 - Create Bureaucrat by copy (new a)" << std::endl;
-    std::cout << "2 - Assign Bureaucrat (a = b)" << std::endl;
-    std::cout << "3 - Increment Grade (++)" << std::endl;
-    std::cout << "4 - Decrement Grade (--)" << std::endl;
-    std::cout << "0 - Exit" << std::endl;
+    std::cout << "\033[1;33m*** TEST 1: Invalid Bureaucrats\033[0m" << std::endl;
+
+    try
+    {
+        Bureaucrat tooHigh("God", 0); /* fail */
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+
+    try
+    {
+        Bureaucrat tooLow("Slave", 151); /* fail */
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+    std::cout << std::endl;
 }
 
-void showBureaucrats(const std::vector<Bureaucrat> &bureaucrats)
+void test2()
 {
-    std::cout << "\033[1;32m\nCurrent Bureaucrats: \033[0m" << std::endl;
-    for (size_t i = 0; i < bureaucrats.size(); ++i)
-        std::cout << "\033[32m[#" << i << "] " << bureaucrats[i] << "\033[0m" << std::endl;
+    std::cout << "\033[1;33m*** TEST 2: Valid Bureaucrats and printing\033[0m" << std::endl;
+
+    try
+    {
+        Bureaucrat boss("BOSS", 1);
+        Bureaucrat employee("John", 50);
+        Bureaucrat slave("Slave", 150);
+
+        std::cout << boss << std::endl;
+        std::cout << employee << std::endl;
+        std::cout << slave << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void test3()
+{
+    std::cout << "\033[1;33m*** TEST 3: Increment/Decrement grade\033[0m" << std::endl;
+
+    try
+    {
+        Bureaucrat luis("Luis", 75);
+        std::cout << "Original: " << luis << std::endl;
+
+        luis.incrementGrade();
+        std::cout << "Increment: " << luis << std::endl;
+
+        luis.decrementGrade();
+        std::cout << "Decrement: " << luis << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void test4()
+{
+    std::cout << "\033[1;33m*** TEST 4: Increment/Decrement and fail\033[0m" << std::endl;
+
+    try
+    {
+        Bureaucrat pepe("Pepe", 1);
+        std::cout << "Original: " << pepe << std::endl;
+        pepe.incrementGrade(); /* fail */
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+
+    try
+    {
+        Bureaucrat alf("Alf", 150);
+        std::cout << "Original: " << alf << std::endl;
+        alf.decrementGrade(); /* fail */
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void test5()
+{
+    std::cout << "\033[1;33m*** TEST 5: Copy and assignment\033[0m" << std::endl;
+
+    try
+    {
+        Bureaucrat leo("Leo", 42);
+        Bureaucrat leocopy1(leo);
+
+        Bureaucrat pedro("Pedro", 52);
+        Bureaucrat jose("Jose", 12);
+
+        std::cout << "Original: " << leo << std::endl;
+        std::cout << "Copy (constructor): " << leocopy1 << std::endl
+                  << std::endl;
+
+        std::cout << "Original: " << pedro << std::endl;
+        std::cout << "Original: " << jose << std::endl;
+        jose = pedro;
+        std::cout << "Copy (assignment): " << jose << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31mException: " << e.what() << "\033[0m" << std::endl;
+    }
+    std::cout << std::endl;
 }
 
 int main(void)
 {
-    std::vector<Bureaucrat> bureaucrats;
-    int count;
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
-    std::cout << "Number of Bureaucrats? ";
-    while (!(std::cin >> count) || count <= 0)
-    {
-        std::cin.clear(); /*reset (error)status cin*/
-        /*ignore all characters from the input buffer until a newline (\n)*/
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Please enter a valid positive number: ";
-    }
-    for (int i = 0; i < count; ++i)
-    {
-        std::string name;
-        std::string option;
-        int grade;
-        std::cout << "Use default name? (y/n): ";
-        std::cin >> option;
-        if (option == "y" || option == "Y")
-        {
-            Bureaucrat b;
-            bureaucrats.push_back(b);
-            continue;
-        }
-
-        std::cout << "Name #" << i + 1 << ": ";
-        std::cin >> name;
-        std::cout << "Grade (1-150): ";
-        while (!(std::cin >> grade))
-        {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid input. Please enter a number: ";
-        }
-        try
-        {
-            /*Create Obj*/
-            Bureaucrat b(name, grade);
-            bureaucrats.push_back(b);
-        }
-        catch (std::exception &e)
-        {
-            std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
-            --i;
-        }
-    }
-
-    int option;
-    do
-    {
-        showBureaucrats(bureaucrats);
-        menu();
-        std::cout << "Choose an option: ";
-        while (!(std::cin >> option))
-        {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid input. Choose a number: ";
-        }
-        switch (option)
-        {
-        case 1: /*Copy with new name*/
-        {
-            int index;
-            std::cout << "Enter index of Bureaucrat to copy (0 to " << bureaucrats.size() - 1 << "): ";
-            std::cin >> index;
-
-            if (index >= 0 && index < (int)bureaucrats.size())
-            {
-                std::string newName;
-                std::cout << "Enter new name for the copy: ";
-                std::cin >> newName;
-
-                try
-                {
-                    Bureaucrat copy(newName, bureaucrats[index].getGrade());
-                    bureaucrats.push_back(copy);
-                    std::cout << "Copied: " << copy << std::endl;
-                }
-                catch (std::exception &e)
-                {
-                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
-                }
-            }
-            else
-                std::cout << "Invalid index" << std::endl;
-            break;
-        }
-        case 2: /*Assignment*/
-        {
-            if (bureaucrats.size() < 2)
-            {
-                std::cout << "Assignment requires at least 2 Bureaucrats." << std::endl;
-                break;
-            }
-
-            int from, to;
-            std::cout << "Assign FROM index: ";
-            std::cin >> from;
-            std::cout << "Assign TO index: ";
-            std::cin >> to;
-
-            if (from >= 0 && from < (int)bureaucrats.size() &&
-                to >= 0 && to < (int)bureaucrats.size())
-            {
-                bureaucrats[to] = bureaucrats[from];
-                std::cout << "Assigned " << bureaucrats[from].getName()
-                          << " to " << bureaucrats[to].getName() << std::endl;
-            }
-            else
-                std::cout << "Invalid indices." << std::endl;
-            break;
-        }
-        case 3: /* ++ Grade */
-        {
-            int index;
-            std::cout << "Enter index to increment grade: ";
-            std::cin >> index;
-            if (index >= 0 && index < (int)bureaucrats.size())
-            {
-                try
-                {
-                    bureaucrats[index].incrementGrade();
-                    std::cout << "Incremented: " << bureaucrats[index] << std::endl;
-                }
-                catch (std::exception &e)
-                {
-                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
-                }
-            }
-            else
-                std::cout << "Invalid index." << std::endl;
-            break;
-        }
-        case 4: /* -- Grade */
-        {
-            int index;
-            std::cout << "Enter index to decrement grade: ";
-            std::cin >> index;
-            if (index >= 0 && index < (int)bureaucrats.size())
-            {
-                try
-                {
-                    bureaucrats[index].decrementGrade();
-                    std::cout << "Decremented: " << bureaucrats[index] << std::endl;
-                }
-                catch (std::exception &e)
-                {
-                    std::cerr << "\033[1;31mError: " << e.what() << "\033[0m" << std::endl;
-                }
-            }
-            else
-                std::cout << "Invalid index." << std::endl;
-            break;
-        }
-        case 0:
-            std::cout << "Bye, Bye..." << std::endl;
-            break;
-        default:
-            std::cout << "Invalid option." << std::endl;
-        }
-    } while (option != 0);
     return 0;
 }

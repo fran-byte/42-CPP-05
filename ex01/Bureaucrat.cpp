@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:02:27 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 11:44:57 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:01:23 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,20 @@ void Bureaucrat::decrementGrade()
     if (_grade == 150)
         throw GradeTooLowException();
     _grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << "\033[1;32m" << _name << " signed " << form.getName() << "\033[0m" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31m" << _name << " couldn't sign " << form.getName()
+                  << " because " << e.what() << "\033[0m" << std::endl;
+    }
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

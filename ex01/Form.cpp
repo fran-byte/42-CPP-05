@@ -6,11 +6,12 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:32:33 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 13:45:46 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:59:29 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name("NoName"), _isSigned(false), _gradeToSign(150), _gradeToExec(150)
 {
@@ -68,20 +69,18 @@ const char *Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(Bureaucrat &b)
 {
-    if (b.getGrade() <= _gradeToSign)
+    if (b.getGrade() > _gradeToSign)
     {
-        _isSigned = true;
-        std::cout << b << " signed the form!!" << std::endl;
+        throw Form::GradeTooLowException();
     }
-    else
-        std::cout << b << " \033[1;31mis not allowed to sign this form!!\033[0m" << std::endl;
+    _isSigned = true;
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &obj)
 {
     out << obj.getName() << " :" << std::endl
         << "- Grade to sign: " << obj.getGradeToSign() << std::endl
-        << "- Grade to Execute: " << obj.getGradeToSign() << std::endl
+        << "- Grade to Execute: " << obj.getGradeToExec() << std::endl
         << "- Sign : " << obj.getIsSign() << std::endl;
     return out;
 }

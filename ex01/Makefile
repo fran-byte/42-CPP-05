@@ -6,11 +6,11 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 18:25:39 by frromero          #+#    #+#              #
-#    Updated: 2025/11/12 18:33:18 by frromero         ###   ########.fr        #
+#    Updated: 2025/11/13 21:09:49 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Form
 CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDES = -I .

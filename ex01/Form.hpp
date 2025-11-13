@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:31:17 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 12:02:05 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/13 20:21:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
+
+class Bureaucrat;
 
 class Form
 {
