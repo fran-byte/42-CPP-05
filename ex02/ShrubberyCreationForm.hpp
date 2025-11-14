@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 07:51:55 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/14 10:34:33 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:04:48 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,20 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 private:
-    const std::string _name;
-    int _grade;
+    const std::string _target;
 
 public:
     ShrubberyCreationForm();
-    ShrubberyCreationForm(const std::string &name, int grade);
+    ShrubberyCreationForm(const std::string &target);
     ShrubberyCreationForm(const ShrubberyCreationForm &copy);
     ~ShrubberyCreationForm();
-
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-
-    const std::string &getName() const;
-    int getGrade() const;
-    void setGrade(int grade);
-    void incrementGrade();
-    void decrementGrade();
-    void signForm(Form &form);
-
-    class GradeTooHighException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
-    class GradeTooLowException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
+    virtual void executeAction() const;
 };
-
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm const &obj);
 
 #endif

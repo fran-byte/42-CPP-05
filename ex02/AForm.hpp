@@ -24,6 +24,7 @@ public:
 
     std::string getName() const;
     bool isSigned() const;
+    bool getIsSign() const;
     int getGradeToSign() const;
     int getGradeToExec() const;
 

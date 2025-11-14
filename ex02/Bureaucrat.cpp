@@ -6,11 +6,12 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:02:27 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 19:01:23 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:52:46 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("NoName"), _grade(150) {}
 
@@ -67,7 +68,8 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+/*forms*/
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
@@ -77,6 +79,20 @@ void Bureaucrat::signForm(Form &form)
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << _name << " couldn't sign " << form.getName()
+                  << " because " << e.what() << "\033[0m" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << "\033[1;32m" << _name << " executed " << form.getName() << "\033[0m" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31m" << _name << " couldn't execute " << form.getName()
                   << " because " << e.what() << "\033[0m" << std::endl;
     }
 }
