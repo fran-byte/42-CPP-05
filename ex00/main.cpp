@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/13 21:07:55 by frromero         ###   ########.fr       */
+/*   Updated: 2025/11/21 18:56:57 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void test2()
     try
     {
         Bureaucrat boss("BOSS", 1);
-        Bureaucrat employee("John", 50);
+        Bureaucrat john("John", 50);
         Bureaucrat slave("Slave", 150);
 
         std::cout << boss << std::endl;
-        std::cout << employee << std::endl;
+        std::cout << john << std::endl;
         std::cout << slave << std::endl;
     }
     catch (const std::exception &e)
