@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 18:25:39 by frromero          #+#    #+#              #
-#    Updated: 2025/11/14 15:37:34 by frromero         ###   ########.fr        #
+#    Updated: 2025/11/27 18:10:09 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f *_shrubbery
 	@echo "$(NAME) deleted."
 
 re: fclean all
