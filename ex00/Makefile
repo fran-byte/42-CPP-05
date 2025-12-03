@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 10:58:43 by frromero          #+#    #+#              #
-#    Updated: 2025/11/13 21:09:57 by frromero         ###   ########.fr        #
+#    Updated: 2025/12/03 11:39:46 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CXX) $(CFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
 	@echo "$(NAME) created."
-
-%.o: %.cpp
-	@$(CXX) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
