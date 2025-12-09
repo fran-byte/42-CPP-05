@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 08:29:17 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:42:01 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ void test4()
         std::cout << pepi << std::endl;
         std::cout << r2d2;
 
-        Bureaucrat jesus("Jesus", 1);
+        Bureaucrat jesus("Jesus", 1); /* He can to sign*/
         std::cout << jesus << std::endl;
         jesus.signForm(r2d2);
         std::cout << r2d2;
 
-        pepi.executeForm(r2d2);
+        pepi.executeForm(r2d2); /* He can´t to execute*/
         std::cout << std::endl;
     }
     catch (const std::exception &e)
