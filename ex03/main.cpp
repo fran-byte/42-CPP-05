@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 20:42:30 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:47:13 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int main()
     (void)form2;
     perico.signForm(*form);
     perico.executeForm(*form);
-    delete form;
+    delete form; /* Free heap*/
 
     /* Test 8 */
     std::cout << std::endl
