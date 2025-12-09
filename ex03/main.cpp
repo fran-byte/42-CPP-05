@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 14:00:04 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:16:09 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,8 @@ int main()
     test6();
 
     /* Test 7 */
-    std::cout << "*** TEST 7: Intern NOK ***" << std::endl;
+    std::cout << std::endl
+              << "*** TEST 7: Intern NOK ***" << std::endl;
 
     Bureaucrat perico("Perico", 150);
     Intern slave;
@@ -166,14 +167,17 @@ int main()
     delete form;
 
     /* Test 8 */
-    std::cout << "*** TEST 8: Intern OK ***" << std::endl;
+    std::cout << std::endl
+              << "*** TEST 8: Intern OK ***" << std::endl;
 
     Bureaucrat luisito("Luisito", 2);
     Intern slave2;
     std::cout << luisito << std::endl;
     AForm *form3 = slave2.makeForm("robotomy request", "Hulk");
+    std::cout << *form3 << std::endl;
     luisito.signForm(*form3);
     luisito.executeForm(*form3);
     delete form3;
+
     return 0;
 }
