@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 19:23:29 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:42:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
+
+/*Exercise 03: Factory pattern implementation.
+Enhances ex02 with Intern class for dynamic form creation.
+Tests makeForm() factory method with string-based instantiation.
+Demonstrates complete workflow: factory creation → signing → execution.*/
 
 void test1()
 {

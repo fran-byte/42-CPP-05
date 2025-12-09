@@ -6,13 +6,20 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 18:39:13 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:40:19 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <iostream>
+
+/*
+Exercise 01: Form signing mechanism.
+Builds on ex00 by adding Form class with two-tier authorization.
+Tests form signing workflow with grade validation.
+Now includes Bureaucrat-Form interaction through signForm().
+*/
 
 void test1()
 {

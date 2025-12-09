@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 18:41:36 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:41:56 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+
+/*
+Exercise 02: Polymorphic form execution.
+Extends ex01: Form renamed to AForm (abstract base class).
+Adds three concrete forms with unique executeAction() behaviors.
+Tests two-phase workflow: signing then execution with grade checks.
+*/
 
 void test1()
 {

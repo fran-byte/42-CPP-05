@@ -6,12 +6,19 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:13:44 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 18:37:03 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:39:52 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+
+/*
+Exercise 00: Bureaucrat class implementation.
+Tests grade validation (1-150 range), increment/decrement operations,
+exception handling, and Orthodox Canonical Form compliance.
+Demonstrates basic grade-based authority system.
+*/
 
 void test1()
 {
