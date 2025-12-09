@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:57:45 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 12:49:39 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 18:10:18 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Intern &Intern::operator=(Intern const &other)
 }
 
 Intern::~Intern() {}
+
 AForm *Intern::makeForm(std::string const &name, std::string const &target)
 {
     std::vector<std::string> validForm;
