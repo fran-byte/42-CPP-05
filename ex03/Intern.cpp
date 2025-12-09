@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 10:20:42 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 11:13:23 by frromero         ###   ########.fr       */
+/*   Created: 2025/12/09 10:57:45 by frromero          #+#    #+#             */
+/*   Updated: 2025/12/09 11:14:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
-#include "Aform.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
-class Intern
+Intern::Intern() {}
+
+Intern::Intern(Intern const &copy)
 {
+    /*Copy anything*/
+    void(copy);
+}
 
-public:
-    Intern();
-    Intern(Intern const &copy);
-    ~Intern();
-    Intern &operator=(Intern const &other);
-    Aform *makeForm(std::string const &name, std::string const &target);
-};
+Intern &Intern::operator=(Intern const &other)
+{
+    void(other);
+    return *this;
+}
 
-#endif
+Intern::~Intern() {}
+
+Aform *Intern::makeForm(std::string const &name, std::string const &target)
+{
+}
