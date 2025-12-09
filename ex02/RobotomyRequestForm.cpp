@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 07:52:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 07:39:58 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:05:41 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void RobotomyRequestForm::executeAction() const
 
     if (randomNum % 2 == 0)
     {
-        std::cout << _target << " has been successfully robotomized! 🤖" << std::endl;
+        std::cout << _target << " has been successfully robotomized! " << std::endl;
     }
     else
     {
