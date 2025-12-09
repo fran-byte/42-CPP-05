@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 07:52:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/11/14 19:56:36 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 07:39:58 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void RobotomyRequestForm::executeAction() const
     std::srand(std::time(0));
     int randomNum = std::rand() % 10;
 
-    std::cout << "* BRRRRZZZT! *" << std::endl; // 🔧 Sonidos de taladro
+    std::cout << "* BRRRRZZZT! *" << std::endl;
 
     if (randomNum % 2 == 0)
     {
@@ -51,6 +51,6 @@ void RobotomyRequestForm::executeAction() const
     }
     else
     {
-        std::cout << _target << "'s robotomy failed... better luck next time! 😅" << std::endl;
+        std::cout << _target << "'s robotomy failed... better luck next time!" << std::endl;
     }
 }
