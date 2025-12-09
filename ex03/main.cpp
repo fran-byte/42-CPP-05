@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 08:42:01 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:00:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 void test1()
 {
@@ -22,6 +23,7 @@ void test1()
     try
     {
         Bureaucrat paco("Paco", 1);
+
         ShrubberyCreationForm garden("Home");
         std::cout << paco << std::endl;
         std::cout << garden;
@@ -151,5 +153,27 @@ int main()
     test5();
     test6();
 
+    /* Test 7 */
+    std::cout << "*** TEST 7: Intern NOK ***" << std::endl;
+
+    Bureaucrat perico("Perico", 150);
+    Intern slave;
+    std::cout << perico << std::endl;
+    AForm *form = slave.makeForm("robotomy request", "Hulk");
+    AForm *form2 = slave.makeForm("Renta2025", "Hulk");
+    perico.signForm(*form);
+    perico.executeForm(*form);
+    delete form;
+
+    /* Test 8 */
+    std::cout << "*** TEST 8: Intern OK ***" << std::endl;
+
+    Bureaucrat luisito("Luisito", 2);
+    Intern slave2;
+    std::cout << luisito << std::endl;
+    AForm *form3 = slave2.makeForm("robotomy request", "Hulk");
+    luisito.signForm(*form3);
+    luisito.executeForm(*form3);
+    delete form3;
     return 0;
 }
