@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 08:42:01 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 18:41:36 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void test1()
 {
-    std::cout << "*** TEST 1: ShrubberyCreationForm :OK ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 1: ShrubberyCreationForm :OK ***\033[0m" << std::endl;
 
     try
     {
@@ -38,7 +38,7 @@ void test1()
 
 void test2()
 {
-    std::cout << "*** TEST 2: PresidentialPardonForm :OK ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 2: PresidentialPardonForm :OK ***\033[0m" << std::endl;
 
     try
     {
@@ -59,7 +59,7 @@ void test2()
 
 void test3()
 {
-    std::cout << "*** TEST 3: RobotomyRequestForm ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 3: RobotomyRequestForm ***\033[0m" << std::endl;
 
     try
     {
@@ -80,7 +80,7 @@ void test3()
 
 void test4()
 {
-    std::cout << "*** TEST 4: Error - Grade too low to execute ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 4: Error - Grade too low to execute ***\033[0m" << std::endl;
 
     try
     {
@@ -105,7 +105,7 @@ void test4()
 
 void test5()
 {
-    std::cout << "*** TEST 5: Error - Form not signed ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 5: Error - Form not signed ***\033[0m" << std::endl;
 
     try
     {
@@ -124,7 +124,7 @@ void test5()
 
 void test6()
 {
-    std::cout << "*** TEST 6: Error - Grade too low to sign ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 6: Error - Grade too low to sign ***\033[0m" << std::endl;
 
     try
     {

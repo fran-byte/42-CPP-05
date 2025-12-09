@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:30:53 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 14:16:09 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 19:23:29 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void test1()
 {
-    std::cout << "*** TEST 1: ShrubberyCreationForm :OK ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 1: ShrubberyCreationForm :OK ***\033[0m" << std::endl;
 
     try
     {
@@ -40,7 +40,7 @@ void test1()
 
 void test2()
 {
-    std::cout << "*** TEST 2: PresidentialPardonForm :OK ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 2: PresidentialPardonForm :OK ***\033[0m" << std::endl;
 
     try
     {
@@ -61,7 +61,7 @@ void test2()
 
 void test3()
 {
-    std::cout << "*** TEST 3: RobotomyRequestForm ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 3: RobotomyRequestForm ***\033[0m" << std::endl;
 
     try
     {
@@ -82,7 +82,7 @@ void test3()
 
 void test4()
 {
-    std::cout << "*** TEST 4: Error - Grade too low to execute ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 4: Error - Grade too low to execute ***\033[0m" << std::endl;
 
     try
     {
@@ -107,7 +107,7 @@ void test4()
 
 void test5()
 {
-    std::cout << "*** TEST 5: Error - Form not signed ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 5: Error - Form not signed ***\033[0m" << std::endl;
 
     try
     {
@@ -126,7 +126,7 @@ void test5()
 
 void test6()
 {
-    std::cout << "*** TEST 6: Error - Grade too low to sign ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 6: Error - Grade too low to sign ***\033[0m" << std::endl;
 
     try
     {
@@ -154,21 +154,21 @@ int main()
     test6();
 
     /* Test 7 */
-    std::cout << std::endl
-              << "*** TEST 7: Intern NOK ***" << std::endl;
+    std::cout << "\033[1;33m*** TEST 7: Intern NOK ***\033[0m" << std::endl;
 
     Bureaucrat perico("Perico", 150);
     Intern slave;
     std::cout << perico << std::endl;
     AForm *form = slave.makeForm("robotomy request", "Hulk");
-    AForm *form2 = slave.makeForm("Renta2025", "Hulk");
+    AForm *form2 = slave.makeForm("Renta2025", "Hulk"); /*No need delete (form2 = NULL)*/
+    (void)form2;
     perico.signForm(*form);
     perico.executeForm(*form);
     delete form;
 
     /* Test 8 */
     std::cout << std::endl
-              << "*** TEST 8: Intern OK ***" << std::endl;
+              << "\033[1;33m*** TEST 8: Intern OK ***\033[0m" << std::endl;
 
     Bureaucrat luisito("Luisito", 2);
     Intern slave2;

@@ -6,13 +6,13 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 10:58:43 by frromero          #+#    #+#              #
-#    Updated: 2025/12/03 11:39:46 by frromero         ###   ########.fr        #
+#    Updated: 2025/12/09 19:16:34 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 CXX = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDES = -I .
 
 SRC =	main.cpp Bureaucrat.cpp
@@ -23,7 +23,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CXX) $(CFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
 	@echo "$(NAME) created."
 
 clean:
