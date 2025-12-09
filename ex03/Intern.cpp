@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:57:45 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/09 18:10:18 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/09 18:17:34 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ Intern::Intern() {}
 
 Intern::Intern(Intern const &copy)
 {
-    /*Copy anything*/
+    /*No attributes to initialize*/
     (void)copy;
 }
 
 Intern &Intern::operator=(Intern const &other)
 {
+    /*Nothing to assign*/
     (void)other;
     return *this;
 }
