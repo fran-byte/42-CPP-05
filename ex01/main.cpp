@@ -15,10 +15,14 @@
 #include <iostream>
 
 /*
-Exercise 01: Form signing mechanism.
-Builds on ex00 by adding Form class with two-tier authorization.
-Tests form signing workflow with grade validation.
-Now includes Bureaucrat-Form interaction through signForm().
+Exercise 01: Form signing mechanism
+Builds on ex00 by adding Form class with two-tier authorization
+Includes Bureaucrat-Form interaction through signForm()
+
+[Bureaucrat]    signForm()  [Form]
+    |                           |
+    v                           v
+   --------     beSigned() ----------
 */
 
 void test1()

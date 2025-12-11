@@ -16,10 +16,15 @@
 #include "RobotomyRequestForm.hpp"
 
 /*
-Exercise 02: Polymorphic form execution.
-Extends ex01: Form renamed to AForm (abstract base class).
-Adds three concrete forms with unique executeAction() behaviors.
-Tests two-phase workflow: signing then execution with grade checks.
+Exercise 02: Polymorphic form execution
+Extends ex01: Form renamed to AForm (abstract base class)
+Adds three concrete forms with unique executeAction() behaviors
+Tests two-phase workflow: signing then execution with grade checks
+
+[Bureaucrat]  -->  [AForm]  -->  [3 Form Types]
+    |                   |
+    v                   v
+[signForm]          [executeForm]
 */
 
 void test1()

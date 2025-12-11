@@ -15,9 +15,15 @@
 
 /*
 Exercise 00: Bureaucrat class implementation.
-Tests grade validation (1-150 range), increment/decrement operations,
-exception handling, and Orthodox Canonical Form compliance.
-Demonstrates basic grade-based authority system.
+
+[Bureaucrat]  (1-150) [grade]
+    |                      |
+
+    |                  Execption OBJECT
+
+    |                      |
+    v                      v
+[incremewnt/decrement]  [exceptions]
 */
 
 void test1()

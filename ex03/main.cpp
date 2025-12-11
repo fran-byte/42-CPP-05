@@ -16,10 +16,15 @@
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 
-/*Exercise 03: Factory pattern implementation.
-Enhances ex02 with Intern class for dynamic form creation.
-Tests makeForm() factory method with string-based instantiation.
-Demonstrates complete workflow: factory creation → signing → execution.*/
+/*Exercise 03: 
+Demonstrates complete workflow: factory creation → signing → execution
+
+[intern]   makeForm()     -->     [AForm*] --> [Bureaucrat]
+    |                                   |
+    v                                   v
+parameter:[strings(name/target)]    [sign/execute]
+
+*/
 
 void test1()
 {
