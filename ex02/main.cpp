@@ -17,9 +17,8 @@
 
 /*
 Exercise 02: Polymorphic form execution
-Extends ex01: Form renamed to AForm (abstract base class)
-Adds three concrete forms with unique executeAction() behaviors
-Tests two-phase workflow: signing then execution with grade checks
+Form renamed to AForm (abstract base class)
+Adds 3 forms with unique executeAction() behaviors
 
 [Bureaucrat]  -->  [AForm]  -->  [3 Form Types]
     |                   |
